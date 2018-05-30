@@ -1,0 +1,17 @@
+{
+  "name": "viajes",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Patrick Folch <patrickfolch2@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/PatrickFolch/pagina_de_viajes",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
