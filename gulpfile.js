@@ -2,7 +2,7 @@ let gulp = require('gulp'),
 uglify = require('gulp-uglify'),
 concat =require('gulp-concat'),
 rename = require('gulp-rename'),
-cssMin = require('gulp-clean-css')
+cssMin = require('gulp-clean-css');
 
 gulp.task('default',['scripts','stylesheets']);
 
@@ -45,7 +45,7 @@ gulp.watch('./public/stylesheets/**/*.css').on('change',
  .pipe(concat('main.css'))
  .pipe(gulp.dest('./public/dist/stylesheets'))
  .pipe(rename('main.min.css'))
- .pipe(uglify())
+ .pipe(cssMin())
  .pipe(gulp.dest('./public/dist/stylesheets'));
 
 }

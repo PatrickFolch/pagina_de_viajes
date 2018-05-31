@@ -4,14 +4,14 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var hbs = require('hbs');
-const hbsUtils=require('hbs-utils')(hbs);
+var hbsUtils = require('hbs-utils')(hbs);
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var app = express();
 
 // view engine setup
-hbsUtils.registersPartials(`${_dirmame}/views/partials`)
-hbsUtils.registersWatchedPartials(`${_dirmame}/views/partials`)
+hbsUtils.registerPartials(`${__dirname}/views/partials`)
+hbsUtils.registerWatchedPartials(`${__dirname}/views/partials`)
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use('bower_components',express.static(`${__dirname}/public/components`));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
