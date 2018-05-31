@@ -1,8 +1,51 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color:tomato;
 }
 
-a {
-  color: #00B7FF;
+h1{
+  font-size: 50px;
+  color:yellow;
 }
+
+
+
+a {
+  color: white;
+}
+nav{
+  font-size: 20px;;
+  color:black;
+  }
+
+  nav a:hover{
+  color:blue;
+}
+
+.image{
+  background: url("/images/nathan-anderson-316188-unsplash.jpg") no-repeat center top;
+  background-position: center center;
+  text-align: center;
+  min-height: 400px;
+  width: 100%;
+  background-size:cover;
+}
+
+p{
+font-size: 20px;
+color: bisque;
+}
+
+.logo{
+height: 60px;
+width: 180px;
+}
+
+ .footer{
+   background-color: blue;
+   color: bisque;
+   
+ }
+
+.sub{
+background-color: yellow;
+ }
