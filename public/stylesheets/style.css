@@ -44,11 +44,6 @@ nav{
   margin-top:30px; 
 }
 
-
-
-
-
-
 .logo{
 height: 60px;
 width: 180px;
@@ -58,12 +53,13 @@ width: 180px;
    background-color: darkblue;
    color: bisque;
    padding: 30px;
-   text-align: left;
+   
   }
 
  .titulo{
-color: white;
- }
+  color: white;
+  text-align: center;
+}
 
  .rs1{
 width: 40px;
@@ -118,12 +114,13 @@ form{
 
 .but button{
   color: yellow;
-  margin-left: 100px;
 }
 
 .bot button{
-  font-size:50px;
+  font-size: 30px;
+  text-align: center;
 }
+
 .cop{
   border-top: solid 1px black; 
   text-align: center;
@@ -150,4 +147,7 @@ form{
   right: 10px;
   height: 60px;
 
+}
+a nav-link{
+color: white;
 }

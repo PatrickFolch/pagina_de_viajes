@@ -44,11 +44,6 @@ nav{
   margin-top:30px; 
 }
 
-
-
-
-
-
 .logo{
 height: 60px;
 width: 180px;
@@ -58,12 +53,13 @@ width: 180px;
    background-color: darkblue;
    color: bisque;
    padding: 30px;
-  text-align: left
+   
   }
 
  .titulo{
-color: white;
- }
+  color: white;
+  text-align: center;
+}
 
  .rs1{
 width: 40px;
@@ -83,6 +79,8 @@ padding: 20px;
 text-decoration:underline yellow;
 }
 
+
+
 p{
   font-size: 20px;
 }
@@ -98,7 +96,7 @@ form{
   padding: 60px;
 }
 .gm{
-  padding: 80px;
+  padding: 60px;
 }
 
 .pf1{
@@ -113,21 +111,43 @@ form{
   padding: 20px;
 };
 
-.precio {
-  color: black;
-  background-color: yellow;
-}
+
 .but button{
   color: yellow;
 }
 
 .bot button{
-  font-size:50px;
+  font-size: 30px;
+  text-align: center;
 }
+
 .cop{
   border-top: solid 1px black; 
   text-align: center;
   background-color: darkblue;
   color: white;
   padding: 50px;
+}
+
+.ofer {
+  color:white;
+  position: absolute;
+  background-color: blue;
+  top: 10px;
+  left: 10px;
+  width: 80%;
+  height: 35px;
+}
+
+.money {
+  position: absolute;
+  background-color: yellow;
+  color: blue;
+  top: 10px;
+  right: 10px;
+  height: 60px;
+
+}
+a nav-link{
+color: white;
 }
