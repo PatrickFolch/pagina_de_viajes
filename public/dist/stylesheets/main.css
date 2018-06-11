@@ -9,7 +9,11 @@ h1{
   text-align: center;
 }
 
-
+ .login h1 {
+  font-size: 50px;
+  color: black;
+  text-align: center;
+}
 
 a {
   color: white;
@@ -35,6 +39,17 @@ nav{
 }
 .bkimage2{
   background: url("/images/travel_2.jpg") no-repeat center;
+  background-position: center center;
+  text-align: center;
+  min-height: 400px;
+  width: 100%;
+  background-size:cover;
+  padding:50px;
+  margin-top:30px; 
+}
+
+.bkimage3{
+  background: url("/images/travel_1.jpg") no-repeat center;
   background-position: center center;
   text-align: center;
   min-height: 400px;
@@ -90,7 +105,7 @@ width: 80px;
  .footer{
    background-color: darkblue;
    color: bisque;
-    padding: 30px;
+    padding: 25px;
   }
 
  .titulo{
@@ -106,14 +121,18 @@ height: 40px;
 
  .qs{
 text-align: left;
-font-size: 20px;
+font-size: 18px;
 color:black; 
 background-color:white;
 padding: 20px;
+max-height:500px;
+min-width:400px; 
 }
 
 .qs h2{
-text-decoration:underline yellow;
+font-size: 25px;
+  text-decoration:underline yellow;
+text-align: center;
 }
 
 
@@ -135,18 +154,6 @@ form{
 .gm{
   padding: 60px;
 }
-
-.pf1{
-  padding: 20px;
-};
-
-.pf2{
-  padding: 20px;
-};
-
-.pf3{
-  padding: 20px;
-};
 
 
 .but button{
@@ -196,3 +203,16 @@ iframe{
   height: 450px;
   width: 600px;
 }
+
+.login{
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+
+}
+
+input{
+  margin: 20px;
+  border: black 5px;
+}
+
