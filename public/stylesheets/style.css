@@ -215,3 +215,7 @@ input{
 .transparente{
   background-color: rgba(200, 200, 250, 0.5)
 }
+
+.cuadrado{
+text-align: left;
+}
