@@ -205,14 +205,13 @@ iframe{
 }
 
 .login{
-  display: flex;
-  justify-content: center;
-  padding: 30px;
-
+font-size: 50px;
 }
 
 input{
-  margin: 20px;
-  border: black 5px;
+  margin: 20px
 }
 
+.transparente{
+  background-color: rgba(200, 200, 250, 0.5)
+}
