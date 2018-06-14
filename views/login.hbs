@@ -8,13 +8,17 @@
         </div>        
     </div>
     <div class="row justify-content-center">
-        <form>
+        <form method="post">
             <div class="form-group">
-                <input class=" form-control form-control-lg" type="text" placeholder="Usuario o Email">
-                <input class=" form-control form-control-lg" type="password" placeholder="Contraseña">
+                <input class=" form-control form-control-lg" type="text" placeholder="Usuario o Email" name="uname">
+                <input class=" form-control form-control-lg" type="password" placeholder="Contraseña" name="psw">
                 <button class="btn btn-warning" type="submit">Enviar</button>
             </div>    
         </form>
+            {{#if info}}
+                <div> <h1>ERROR {{info}} </h1></div>
+            {{/if}}
+    
     </div>  
   </div>       
 </div>
