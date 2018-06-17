@@ -62,38 +62,32 @@ nav{
 .beijing{
   background: url("/images/beijing.jpg")no-repeat center ;
   background-size:cover;
-  min-height: 400px;
-}
+ }
 
 .buenosAires{
   background: url("/images/buenos_aires.JPG")no-repeat center;
   background-size:cover;
-  min-height: 400px;
 }
 
 .mexico{
   background: url("/images/ciudad_mexico.JPG")no-repeat center;
   background-size:cover;
-  min-height: 400px;
 }
 
 .madrid{
   background: url("/images/madrid.jpg")no-repeat center;
   background-size:cover;
-  min-height: 400px;
 }
 
 
 .newYork{
   background: url("/images/new_york.JPG") no-repeat center;
-  background-size:cover;
-  min-height: 400px;
+  background-size:cover
 }
 
 .tokyo{
   background: url("/images/tokyo.JPG") no-repeat center;
-  background-size:cover;
-  min-height: 400px;
+  background-size:cover
 }
 
 .logo{
@@ -201,7 +195,7 @@ iframe{
   flex-direction: row;
   justify-content: center;
   height: 450px;
-  width: 600px;
+  width: 500px;
 }
 
 .login{
@@ -213,7 +207,7 @@ input{
 }
 
 .transparente{
-  background-color: rgba(200, 200, 250, 0.5)
+  background-color: rgba(200, 200, 250, 0.5);
 }
 
 .cuadrado{
