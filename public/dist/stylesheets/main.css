@@ -213,3 +213,12 @@ input{
 .cuadrado{
 text-align: left;
 }
+.e404 h1{
+  color: black;
+  font-size: 60px;
+}
+
+.e404{
+  text-align: center;
+  padding:60px; 
+}
