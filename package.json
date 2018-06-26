@@ -8,6 +8,8 @@
     "start-frontend": "gulp"
   },
   "dependencies": {
+    "app-root-path": "^2.0.1",
+    "bcrypt": "^2.0.1",
     "body-parser": "^1.18.3",
     "browser-sync": "^2.24.4",
     "concurrently": "^3.5.1",
@@ -27,7 +29,10 @@
     "morgan": "~1.9.0",
     "mysql": "^2.15.0",
     "mysql2": "^1.5.3",
-    "nodemon": "^1.17.5"
+    "nodemailer": "^4.6.7",
+    "nodemailer-express-handlebars": "^3.0.0",
+    "nodemon": "^1.17.5",
+    "winston": "^3.0.0"
   },
   "description": "",
   "main": "app.js",

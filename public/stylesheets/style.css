@@ -20,8 +20,7 @@ a {
 }
 
 nav{
-  font-size: 20px;;
-  color:black;
+  font-size: 15px;
   }
 
   nav a:hover{
@@ -233,6 +232,8 @@ input{
   background-color: rgba(200, 200, 250, 0.5);
   min-width: 400px;
   padding: 30px;
+  max-width: 500px;
+margin-left: 350px;
 }
 .transparente a {
   font-size: 18px;
@@ -249,4 +250,9 @@ text-align: left;
 .e404{
   text-align: center;
   padding:60px; 
+}
+
+.log{
+  text-align: center;
+  color: crimson;
 }

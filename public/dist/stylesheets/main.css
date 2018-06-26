@@ -20,8 +20,7 @@ a {
 }
 
 nav{
-  font-size: 20px;;
-  color:black;
+  font-size: 15px;
   }
 
   nav a:hover{
@@ -35,7 +34,6 @@ nav{
   min-height: 400px;
   width: 100%;
   background-size:cover;
-  margin-bottom: 30px;
 }
 .bkimage2{
   background: url("/images/travel_2.jpg") no-repeat center;
@@ -55,39 +53,49 @@ nav{
   min-height: 400px;
   width: 100%;
   background-size:cover;
-  padding:50px;
-  margin-top:30px; 
+  padding:50px; 
 }
 
 .beijing{
   background: url("/images/beijing.jpg")no-repeat center ;
   background-size:cover;
- }
+  min-height: 400px;
+  }
 
 .buenosAires{
   background: url("/images/buenos_aires.JPG")no-repeat center;
   background-size:cover;
+  min-height: 400px;
+
 }
 
 .mexico{
   background: url("/images/ciudad_mexico.JPG")no-repeat center;
   background-size:cover;
+  min-height: 400px;
+
 }
 
 .madrid{
   background: url("/images/madrid.jpg")no-repeat center;
   background-size:cover;
+  min-height: 400px;
+
 }
 
 
 .newYork{
   background: url("/images/new_york.JPG") no-repeat center;
-  background-size:cover
+  background-size:cover;
+  min-height: 400px;
+
 }
 
 .tokyo{
   background: url("/images/tokyo.JPG") no-repeat center;
-  background-size:cover
+  background-size:cover;
+  min-height: 400px;
+
 }
 
 .logo{
@@ -115,21 +123,35 @@ height: 40px;
 
  .qs{
 text-align: left;
-font-size: 18px;
+font-size: 20px;
 color:black; 
 background-color:white;
-padding: 20px;
-max-height:500px;
-min-width:400px; 
+padding: 30px;
+ 
 }
 
+.qs2{
+  margin: 20px;
+  text-align: left;
+  font-size: 18px;
+  color:black; 
+  background-color:white;
+  padding: 20px;
+  max-height:500px;
+  min-width:400px; 
+  }
+
 .qs h2{
-font-size: 25px;
+font-size: 40px;
   text-decoration:underline yellow;
 text-align: center;
 }
 
-
+.qs2 h2{
+font-size: 25px;
+  text-decoration:underline yellow;
+text-align: center;
+}
 
 p{
   font-size: 20px;
@@ -208,8 +230,15 @@ input{
 
 .transparente{
   background-color: rgba(200, 200, 250, 0.5);
+  min-width: 400px;
+  padding: 30px;
+  max-width: 500px;
+margin-left: 350px;
 }
-
+.transparente a {
+  font-size: 18px;
+  text-decoration: none;
+}
 .cuadrado{
 text-align: left;
 }
@@ -221,4 +250,9 @@ text-align: left;
 .e404{
   text-align: center;
   padding:60px; 
+}
+
+.log{
+  text-align: center;
+  color: crimson;
 }

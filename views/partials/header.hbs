@@ -8,6 +8,13 @@
             <a class="nav-link" href="#">Destinos</a>
             <a class="nav-link" href="#">Quienes Somos</a>
             <a class="nav-link" href="#">Donde Estamos</a>
+            {{#unless username}}
+            <a class="nav-link" href="/login">Login</a>
+            <a class="nav-link" href="/register">Regisro</a>
+            {{/unless}}
+            {{#if username}}
+             <a class="nav-link" href="/closeSession">{{username}}</a>
+            {{/if}}
         </nav>
     </div>
     <div class="col-3">       
