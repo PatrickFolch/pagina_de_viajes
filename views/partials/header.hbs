@@ -8,12 +8,12 @@
             <a class="nav-link" href="#">Destinos</a>
             <a class="nav-link" href="#">Quienes Somos</a>
             <a class="nav-link" href="#">Donde Estamos</a>
-            {{#unless username}}
+            {{#unless usuario}}
             <a class="nav-link" href="/login">Login</a>
-            <a class="nav-link" href="/register">Regisro</a>
+            <a class="nav-link" href="/register">Registro</a>
             {{/unless}}
-            {{#if username}}
-             <a class="nav-link" href="/closeSession">{{username}}</a>
+            {{#if usuario}}
+             <a class="nav-link" href="/closeSession">{{usuario}}</a>
             {{/if}}
         </nav>
     </div>
@@ -46,6 +46,12 @@
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Donde Estamos</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="/login">Login</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="/register">Registro</a>
       </li>
     </ul>
   </div>

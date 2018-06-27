@@ -1,54 +1,35 @@
 const Controller = require('./controller');
 const UserModel = require('../models/users');
-const logger = require('../configuration/winston')
-
-class loginController extends Controller 
-{
-    constructor(req, res, next) 
-    {
+//const logger = require('../configuration/winston')
+class LoginController extends Controller {
+    constructor(req, res, next) {
         super(req, res, next);
-        logger.info('Iniciando Login')
+        //logger.info('Iniciando Login')
+    }
+    
+    index() {
+        this.res.render('login')
     }
 
-    login() 
-    {
-        let usuario = this.req.body.uname;
-        let password = this.req.body.psw;
-        let userModel = new UserModel();
-        userModel.findUser(usuario, (info) => {
-            if (info.length === 0) {
-                //logger.debug("El usuario no existe")
-                this.req.flash('info', 'El usuario no existe');
-                this.index();
-            } else {
-                if (password == info[0].password) {
-                    this.index();
-                } else {
-                    this.req.flash('info', 'El password es incorrecto');
-                    this.index();
-
-                }
-            }
-        })
-    }
-
-index()
-{
-    let info= this.req.flash('info');
-    if(info=="")
-    {
-        console.log("NO Existe info");
-        this.res.render('login',
-            {title: 'Login', layout:'layout'});        
-    }else{
-        console.log("Exist info");
+    login() {
+        let userModels = new UserModel();
         
-        this.res.render('login',
-            {title:'Login', layout:'layout',info:info});
-        info="";    
+        userModels.findUser(this.req.body.lg_usuario)
+            .then((data)=>{
+                if(data.length===0) return console.log('no existe');
+                if(data[0].password==this.req.body.lg_password)
+                    this.req.session.usuario=data[0].usuario;       
+            })
+            .catch((error)=>{
+                console.log(error);
+                
+            })
+        this.res.render('login',{
+            usuario: this.req.session.usuario,
+            layout:'layout'
+        });
     }
-}
 
 }
 
-module.exports=loginController;
+module.exports=LoginController;

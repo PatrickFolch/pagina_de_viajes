@@ -8,9 +8,9 @@ var hbs = require('hbs');
 var hbsUtils = require('hbs-utils')(hbs);
 let expressSession = require('express-session')
 let flash = require('connect-flash');
-const winston = require('winston');
-const Logger = require('./configuration/winston')
-const hbsEmail = require('nodemailer-express-handlebars')
+//const winston = require('winston');
+//const Logger = require('./configuration/winston')
+//const hbsEmail = require('nodemailer-express-handlebars')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
