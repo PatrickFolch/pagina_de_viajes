@@ -8,7 +8,17 @@ class LoginController extends Controller {
     }
     
     index() {
-        this.res.render('login')
+        if(this.req.flash.error){
+            this.res.render('login',{error:this.req.flash.error})
+        }
+        if(this.req.session.usuario){
+            this.res.render('login',{
+            usuario: this.req.session.usuario,
+            layout:'layout'
+        });
+        }else{
+            this.res.render('login')
+        }
     }
 
     login() {
@@ -16,18 +26,31 @@ class LoginController extends Controller {
         
         userModels.findUser(this.req.body.lg_usuario)
             .then((data)=>{
-                if(data.length===0) return console.log('no existe');
-                if(data[0].password==this.req.body.lg_password)
-                    this.req.session.usuario=data[0].usuario;       
+                if(data.length===0) {
+                    this.req.flash.error="El usuario no existe";
+                    this.res.redirect('/login')
+                }
+                if(data[0].active===0){
+                    this.req.flash.error="La cuenta no esta activa"
+                    this.res.redirect('/login')
+                    } 
+                if(data[0].password==this.req.body.lg_password){
+                    this.req.session.usuario=data[0].usuario;
+                    this.res.render('login',{
+                        usuario:data[0].usuario
+                    })    
+                }
+                    else{
+                        this.req.flash.error="El usuario o contraseña es incorrecta"
+                        this.res.redirect('/login')
+                    }   
             })
             .catch((error)=>{
                 console.log(error);
                 
             })
-        this.res.render('login',{
-            usuario: this.req.session.usuario,
-            layout:'layout'
-        });
+            //this.res.redirect('login');
+          
     }
 
 }

@@ -1,35 +1,36 @@
 const Controller = require('./controller');
 const UserModel = require('../models/users');
-
+const IdentificationService = require('../service/indetificationService')
 class registerController extends Controller {
     constructor(req, res, next) {
         super(req, res, next)
     }
-
-    register() {
-        let usuario = this.req.body.uname;
-        let email = this.req.body.email;
-        let password = this.req.body.psw;
-        
-        let userModel = new UserModel();
-        userModel.registro( usuario, email, password,(info)=>{
-          
-            console.log(info);
-        
-        });
-        
-        this.res.redirect('/login');    
-        
+    
+    index()
+    {
+        if(this.req.flash.error){
+            console.log(this.req.flash.error);
+            this.res.render('register',{error:this.req.flash.error});
+        }
+        this.res.render('register')
+    
     }
-
-index()
-{
-    this.res.render('register',
-    {title:'Register', layout:'layout'})
-}
-}
-
-
-
+    register(registerData) 
+    {
+        let userModel = new UserModel();
+        userModel.getUserByEmailOurUsername( registerData.usuario, registerData.email)
+          .then((data)=>{
+              if(data.lenght===0)
+              {
+                let indetificationService=new IdentificationService();                                 
+              }
+          })
+            .catch((error)=>{
+                console.log(error);
+                
+          })
+    this.res.redirect('/register');    
+        }
+}      
 
 module.exports=registerController;

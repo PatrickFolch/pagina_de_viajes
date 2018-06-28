@@ -13,48 +13,11 @@
                     <input class=" form-control form-control-lg" type="text" placeholder="Usuario o Email" id="lg_usuario" name="lg_usuario">
                     <input class=" form-control form-control-lg" type="password" placeholder="Contraseña" id="lg_password" name="lg_password">
                     <button class="btn btn-warning" type="submit">Enviar</button>
-                    <br>
                 </div>
             </form>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#recuperarContraseña">
-                    ¿Has olvidado tu Contraseña?
-                </button>
-                <div class="modal fade" id="recuperarContraseña" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <form action="/login/email" method="post">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">
-                                        <i class="fas fa-unlock-alt"></i> Recuperar Contraseña</h5>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <label for="recuperarContraseña">Introduce tu correo</label>
-                                    <input type="email" class="form-control" name="email" placeholder="Correo Electronico..." required>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                    <button type="submit" class="btn btn-primary">Enviar</button>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-
-            <!--{{#if info}}
-            <div class="log">
-                <h3>Error: {{info}} </h3>
-            </div>
-            {{/if}}-->
-
+            {{#if error}}
+            <div class="alert-danger alert-dismissible">{{error}}</div>
+            {{/if}}
         </div>
     </div>
 </div>
