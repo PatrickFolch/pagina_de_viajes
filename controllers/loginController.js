@@ -13,8 +13,7 @@ class LoginController extends Controller {
         }
         if(this.req.session.usuario){
             this.res.render('login',{
-            usuario: this.req.session.usuario,
-            layout:'layout'
+            usuario: this.req.session.usuario
         });
         }else{
             this.res.render('login')
@@ -26,11 +25,11 @@ class LoginController extends Controller {
         
         userModels.findUser(this.req.body.lg_usuario)
             .then((data)=>{
-                if(data.length===0) {
+                if(data.length==0) {
                     this.req.flash.error="El usuario no existe";
                     this.res.redirect('/login')
                 }
-                if(data[0].active===0){
+                if(data[0].active==0){
                     this.req.flash.error="La cuenta no esta activa"
                     this.res.redirect('/login')
                     } 

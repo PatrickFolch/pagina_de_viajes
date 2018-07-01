@@ -35,7 +35,7 @@ router.get('/register',(req, res, next)=>{
   registerController.index();
   });
 router.post('/register',(req,res,next)=>{
-  let registerController=new RegisterController
+  let registerController=new RegisterController(req,res,next)
   registerController.register(req.body);
 })
 

@@ -27,7 +27,7 @@ class UserModel {
             })
         }
 
-        getUserByEmailOrUsername(usuario, email) 
+        getUserByEmailOrUsername( email,usuario) 
         {
             return new Promise((resolve, reject)=>{
                 if (!conn) return reject("no se ha podidio crear la conexion");

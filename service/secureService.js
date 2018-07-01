@@ -2,13 +2,13 @@ const Bcrypt = require('bcrypt');
 
 class secureService 
 {
-    encryptPass(pass) 
+    encryptPass(password) 
     {
-        return Bcrypt.hashSync(pass, 10);
+        return Bcrypt.hashSync(password, 10);
     }
 
-    comparePass(pass, hash) {
-        return Bcrypt.compareSync(pass, hash);
+    comparePass(password, hash) {
+        return Bcrypt.compareSync(password, hash);
     }
 
 }
