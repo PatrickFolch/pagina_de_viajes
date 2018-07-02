@@ -11,9 +11,9 @@
           <form method="POST">
             <div class="form-group">
                     <input class="form-control form-control-lg" type="text" placeholder="Usuario" name="usuario" >
-                    <input class="form-control form-control-lg" type="email" placeholder="Email" name="email" id="1">
-                    <input class="form-control form-control-lg" type="password" placeholder="Contraseña" name="password" id="2">
-                    <input class="form-control form-control-lg" type="password" placeholder=" Repetir contraseña"  id="3">
+                    <input class="form-control form-control-lg" type="email" placeholder="Email" name="email">
+                    <input class="form-control form-control-lg" type="password" placeholder="Contraseña" name="password">
+                    <input class="form-control form-control-lg" type="password" placeholder=" Repetir contraseña">
              <div class="custom-control custom-checkbox mb-3">
                     <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
                     <label class="custom-control-label" for="customControlValidation1">
@@ -26,6 +26,9 @@
           </form>  
             {{#if error}}
                 <div class="error">{{error}}</div>
+            {{/if}}
+            {{#if feedback}}
+                <div class="feedback">{{feedback}}</div>
             {{/if}}
         </div>
     </div>

@@ -7,18 +7,18 @@ var logger = require('morgan');
 var hbs = require('hbs');
 var hbsUtils = require('hbs-utils')(hbs);
 let expressSession = require('express-session')
-let flash = require('connect-flash');
+const flash = require('connect-flash');
 //const winston = require('winston');
 //const Logger = require('./configuration/winston')
 //const hbsEmail = require('nodemailer-express-handlebars')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-let LoginRouter = require('./routes/login');
-let registerRouter = require('./routes/register');
-let login = require('./routes/login')
-let loginFlash = require('./routes/login-flash')
-let regeneration = require('./routes/regeneration')
+// let LoginRouter = require('./routes/login');
+// let registerRouter = require('./routes/register');
+// let login = require('./routes/login')
+// let loginFlash = require('./routes/login-flash')
+//let regeneration = require('./routes/regeneration')
 var app = express();
 
 hbsUtils.registerPartials(`${__dirname}/views/partials`)
@@ -47,11 +47,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('bower_components',express.static(`${__dirname}/public/components`));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/login', LoginRouter)
-app.use('/login-flash', loginFlash);
-app.use('/register', registerRouter);
-app.use('login', login)
-app.use('/regeneration',regeneration);
+// app.use('/login', LoginRouter)
+// app.use('/login-flash', loginFlash);
+// app.use('/register', registerRouter);
+// app.use('login', login)
+//app.use('/regeneration',regeneration);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
 res.render('error404'); 

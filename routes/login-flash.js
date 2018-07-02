@@ -1,4 +1,4 @@
-const Express=require('express');
+/*const Express=require('express');
 const Router= Express.Router();
 
 Router.get('/',(req,res,next)=>{
@@ -10,4 +10,4 @@ Router.get('/create',(req,res,next)=>{
     res.redirect('/login-flash');
 })
 
-module.exports=Router;
+module.exports=Router;*/

@@ -8,7 +8,6 @@ const SessionController = require('../controllers/sessionController');
 router.get('/', function (req, res, next) {
   let homeController = new HomeController(req, res, next);
   homeController.index();
-  //res.render('index', { title: 'Geekshubs travels' });
 });
 
 

@@ -1,4 +1,4 @@
-const Express = require('express');
+/*const Express = require('express');
 const Router = Express.Router();
 const LoginController = require('../controllers/loginController')
 const Email = require('../configuration/emailConf')
@@ -46,4 +46,4 @@ Router.get('/login',(req, res, next)=>{
        });
    })
    
-   module.exports= Router;
+   module.exports= Router;*/

@@ -1,4 +1,4 @@
-const Express = require('express');
+/*const Express = require('express');
 const Router = Express.Router();
 const RegisterController=require('../controllers/registerController')
 
@@ -12,4 +12,4 @@ Router.get('/',(req,res,next)=>{
       registerController.register();
   })
 
-  module.exports=Router;
+  module.exports=Router;*/

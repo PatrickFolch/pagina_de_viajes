@@ -1,4 +1,4 @@
-const Express = require('express');
+/*const Express = require('express');
 const Router = Express.Router();
 const IdentificacionService = require('../service/indetificationService');
 const SecureService = require('../service/secureService');
@@ -29,4 +29,4 @@ Router.get('/encrypt/:pass',(req,res,next)=>{
     res.send(200);
 });
 
-module.exports = Router;
+module.exports = Router;*/
