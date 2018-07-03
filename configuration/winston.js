@@ -1,4 +1,4 @@
-const AppRoot = require('app-root-path');
+/*const AppRoot = require('app-root-path');
 const winston = require('winston');
 let options = {
     file: {
@@ -32,3 +32,4 @@ logger.stream = {
     },
 };
 module.exports = logger;
+*/

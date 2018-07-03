@@ -1,10 +1,8 @@
 const Controller = require('./controller');
 const UserModel = require('../models/users');
-//const logger = require('../configuration/winston')
 class LoginController extends Controller {
     constructor(req, res, next) {
-        super(req, res, next);
-        //logger.info('Iniciando Login')
+        super(req, res, next)
     }
     
     index() {

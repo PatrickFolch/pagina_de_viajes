@@ -25,8 +25,7 @@ class registerController extends Controller {
         userModel.getUserByEmailOrUsername(registerData.email, registerData.usuario)
             .then((data) => {
                 
-                if (data.lenght === 0) {
-                    console.log('npo user fpund', data);
+                if (data.length == 0) {
                     let identificationService = new IdentificationService();
                     registerData.hash = identificationService.getUUIDD(3, 4);
                     let registerService=new RegisterService();
@@ -34,13 +33,7 @@ class registerController extends Controller {
                     userModel.insertUser(registerData).then(console.log).catch(console.error);
                     let emailService= new EmailService();
                     emailService.sendRegisterEmail(registerData);
-                    this.req.flash.feedback = 'Usuario registrado';
-                    this.res.redirect('/register');
-                } else {
-                    console.log('user found',data);
-                    
-                    this.req.flash.error = "El usuario o el email ya esta en uso";
-                }
+                } else this.req.flash.error = "El usuario o el email ya esta en uso";
             })
             .catch((error) => {
                 console.log(error);
