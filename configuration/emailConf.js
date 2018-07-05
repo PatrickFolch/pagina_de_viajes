@@ -7,7 +7,7 @@ mailer.transporter = email.createTransport({
         pass: 'mheeeeee'
     },
 }, {
-    from: '',
+    from:'',
     headers: {
 
     }

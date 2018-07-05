@@ -2,8 +2,9 @@ var express = require('express');
 var router = express.Router();
 const HomeController = require('../controllers/homeController');
 const LoginController = require('../controllers/loginController');
-const RegisterController = require('../controllers/registerController')
 const SessionController = require('../controllers/sessionController');
+const RegisterController = require('../controllers/registerController')
+const ActivateUserController = require('../controllers/activateUserController');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   let homeController = new HomeController(req, res, next);
@@ -34,6 +35,10 @@ router.get('/register',(req, res, next)=>{
 router.post('/register',(req,res,next)=>{
   let registerController=new RegisterController(req,res,next)
   registerController.register(req.body);
+});
+router.get('/activate/:hash',(req,res,next)=>{
+  let activateUserController= new ActivateUserController(req,res,next)
+  activateUserController.index();
 })
 
 module.exports = router;

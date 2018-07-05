@@ -37,8 +37,8 @@ class registerController extends Controller {
             })
             .catch((error) => {
                 console.log(error);
-                this.res.redirect('/register');
             })
+            this.res.redirect('/register');
         
     }
 }

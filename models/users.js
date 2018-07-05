@@ -6,7 +6,7 @@ class UserModel {
     getAll() {
         return new Promise((resolve, reject) => {
             if (!conn) return reject("No se ha podido crea la conexion");
-            const SQL = "SELECT * FROM clients;";
+            const SQL = "SELECT * FROM clients";
             conn.query(SQL, (error, rows) => {
                 if (error) return reject(error);
                 else return resolve(rows);
@@ -49,6 +49,27 @@ class UserModel {
                     else return resolve(rows)
                 })
             })
+        }
+        getUserByHash(hash){
+            return new Promise((resolve,reject)=>{
+                if(!conn) return reject("No existe conexion");
+                let SQL =`INSERT * FROM clients WHERE hash='${hash}';`;
+                conn.query(SQL,(error,rows)=>{
+                    if(error) return reject(error);
+                    else return resolve(rows)
+                })
+            })
+        }
+        setActiveUser(hash){
+            return new Promise((resolve,reject)=>{
+                if(!conn) return reject("No existe conexion");
+                let SQL = `UPDATE clients set active=1, hash='' WHERE hash='${hash}';`;
+                conn.query(SQL,(error, rows)=>{
+                    if(error) return reject(error);
+                    else return resolve(rows);
+                })
+            })
+
         }
     }
 
