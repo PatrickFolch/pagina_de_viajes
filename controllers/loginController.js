@@ -1,5 +1,6 @@
 const Controller = require('./controller');
 const UserModel = require('../models/users');
+const SecureService = require('../service/secureService')
 class LoginController extends Controller {
     constructor(req, res, next) {
         super(req, res, next)
@@ -20,7 +21,7 @@ class LoginController extends Controller {
 
     login() {
         let userModels = new UserModel();
-        
+        let secureService= new SecureService();
         userModels.findUser(this.req.body.lg_usuario)
             .then((data)=>{
                 if(data.length==0) {
@@ -31,7 +32,8 @@ class LoginController extends Controller {
                     this.req.flash.error="La cuenta no esta activa"
                     this.res.redirect('/login')
                     } 
-                if(data[0].password==this.req.body.lg_password){
+                if(secureService.comparePass(this.req.body.lg_password, data[0].password))
+                {
                     this.req.session.usuario=data[0].usuario;
                     this.res.render('login',{
                         usuario:data[0].usuario

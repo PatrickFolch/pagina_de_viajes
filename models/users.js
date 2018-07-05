@@ -35,12 +35,10 @@ class UserModel {
                 conn.query(SQL, (error, rows) => {
                     if (error) return reject(error);
                     else return resolve(rows)
-
-            })    
+                })    
             })
-
         };
-        insertUser(data){
+     insertUser(data){
             return new Promise((resolve, reject)=>{
                 if(!conn) return reject("No existe conexion");
                 let SQL = `INSERT INTO clients (usuario,email,password,hash) values ('${data.usuario}','${data.email}','${data.password}','${data.hash}');`;
@@ -50,10 +48,11 @@ class UserModel {
                 })
             })
         }
+        
         getUserByHash(hash){
             return new Promise((resolve,reject)=>{
                 if(!conn) return reject("No existe conexion");
-                let SQL =`INSERT * FROM clients WHERE hash='${hash}';`;
+                let SQL =`SELECT * FROM clients WHERE hash='${hash}';`;
                 conn.query(SQL,(error,rows)=>{
                     if(error) return reject(error);
                     else return resolve(rows)
