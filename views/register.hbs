@@ -1,4 +1,4 @@
-<div class="container-fluid bkimage3">
+<div class="container-fluid bkimage3 d-none d-md-block d-lg-block">
     <div class="transparente">
         <div class="row">
             <div class="col-12">
@@ -27,8 +27,38 @@
             {{#if error}}
                 <div class="alert-danger alert-dismissible">{{error}}</div>
             {{/if}}
-            {{#if feedback}}
-                <div class="feedback">{{feedback}}</div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid bkimage3 d-md-none lg-block xl-block">
+    <div class="transparente2">
+        <div class="row">
+            <div class="col-12">
+               <div class="login"> 
+                    <h1>REGISTRO</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+          <form method="POST">
+            <div class="form-group">
+                    <input class="form-control form-control-" type="text" placeholder="Usuario" name="usuario" >
+                    <input class="form-control form-control" type="email" placeholder="Email" name="email">
+                    <input class="form-control form-control" type="password" placeholder="Contraseña" name="password">
+                    <input class="form-control form-control" type="password" placeholder=" Repetir contraseña">
+             <div class="custom-control custom-checkbox mb-3">
+                    <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
+                    <label class="custom-control-label" for="customControlValidation1">
+                        acepto los terminos y condiciones, asi como la politica de privacidad</label>
+                    <div class="invalid-feedback"> check the checkbox</div>
+            </div>
+                          
+                    <button class="btn btn-warning" type="submit" value="5">Enviar</button>
+            </div>    
+          </form>  
+            {{#if error}}
+                <div class="alert-danger alert-dismissible">{{error}}</div>
             {{/if}}
         </div>
     </div>

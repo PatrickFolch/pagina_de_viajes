@@ -1,8 +1,15 @@
-<h1>Pagina de activación</h1>
-{{#if mensaje}}
-<h2>Upsss {{mensaje}}</h2>
-{{/if}}
-{{#unless mensaje}}
-    <h2>Tu cuenta ya se encuentra activa</h2>
-    <a href="http://localhost:3000/login">Login</a>
-{{/unless}}
+
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col active">
+            <h1>Pagina de activación</h1>
+            {{#if mensaje}}
+            <h2>Upsss {{mensaje}}</h2>
+            {{/if}}
+            {{#unless mensaje}}
+            <h2>Tu cuenta ya se encuentra activa</h2>
+            <a href="http://localhost:3000/login">Login</a>
+            {{/unless}}
+        </div>
+    </div>
+</div>

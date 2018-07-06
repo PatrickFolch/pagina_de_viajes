@@ -1,7 +1,7 @@
-<div class="container-fluid bkimage3">
+<div class="container-fluid bkimage3 d-none d-md-block d-lg-block">
     <div class="transparente">
         <div class="row">
-            <div class="col-12">
+            <div class="col">
                 <div class="login">
                     <h1>LOGIN</h1>
                 </div>
@@ -12,6 +12,30 @@
                 <div class="form-group">
                     <input class=" form-control form-control-lg" type="text" placeholder="Usuario o Email" id="lg_usuario" name="lg_usuario">
                     <input class=" form-control form-control-lg" type="password" placeholder="Contraseña" id="lg_password" name="lg_password">
+                    <button class="btn btn-warning" type="submit">Enviar</button>
+                </div>
+            </form>
+            {{#if error}}
+            <div class="alert-danger alert-dismissible">{{error}}</div>
+            {{/if}}
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid bkimage3 d-md-none lg-block xl-block">
+    <div class="transparente2">
+        <div class="row">
+            <div class="col">
+                <div class="login">
+                    <h1>LOGIN</h1>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <form method="post">
+                <div class="form-group">
+                    <input class=" form-control form-control" type="text" placeholder="Usuario o Email" id="lg_usuario" name="lg_usuario">
+                    <input class=" form-control form-control" type="password" placeholder="Contraseña" id="lg_password" name="lg_password">
                     <button class="btn btn-warning" type="submit">Enviar</button>
                 </div>
             </form>

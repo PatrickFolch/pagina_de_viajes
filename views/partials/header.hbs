@@ -27,6 +27,21 @@
           <a href="#"><img class="rs1" src="../images/yt-ico.png"></a>
         </div>   
   </div>
+     <div class="row">
+    <div class="col-12">
+      <div class="titulo">
+        <h1>Viaja!</h1>
+        <p>descubre sitios maravillosos</p>
+      </div>
+    </div>
+  </div>
+<div class="row justify-content-center">
+    <div class="12">
+      <div class="bot">
+        <button class="btn btn-warning">ver destinos</button>
+      </div>
+    </div>
+  </div>
 </div>
 <div class="container-fluid bkimage d-lg-none xl-block">
   <div class="row">
@@ -39,6 +54,9 @@
 
   <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item"> 
+        <a class="nav-link" href="/">Home</a>
+      </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Destinos</a>
       </li>
@@ -48,12 +66,19 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Donde Estamos</a>
       </li>
+       {{#unless usuario}}
        <li class="nav-item">
         <a class="nav-link" href="/login">Login</a>
       </li>
        <li class="nav-item">
         <a class="nav-link" href="/register">Registro</a>
       </li>
+        {{/unless}}
+        {{#if usuario}}
+        <li class="nav-item">
+          <a class="nav-link" href="/closeSession">{{usuario}}</a>
+        </li>
+        {{/if}}
     </ul>
   </div>
 </nav>

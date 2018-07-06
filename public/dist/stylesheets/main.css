@@ -52,8 +52,8 @@ nav{
   text-align: center;
   min-height: 400px;
   width: 100%;
-  background-size:cover;
-  padding:50px; 
+  padding:30px;
+  background-size:cover; 
 }
 
 .beijing{
@@ -233,11 +233,27 @@ input{
   min-width: 400px;
   padding: 30px;
   max-width: 500px;
-margin-left: 350px;
+  margin-left: 350px;
+  margin-right: 350px;
 }
 .transparente a {
   font-size: 18px;
   text-decoration: none;
+}
+.transparente2{
+  font-size:15px;
+  background-color: rgba(200, 200, 250, 0.5);
+  min-width: 300px;
+  padding: 15px;
+  
+}
+.transparente2 a {
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.transparente2 h1{
+  font-size: 45px;
 }
 .cuadrado{
 text-align: left;
@@ -255,4 +271,11 @@ text-align: left;
 .log{
   text-align: center;
   color: crimson;
+}
+.active{
+  text-align: center;
+  color: cornflowerblue;
+}
+.active h1{
+  color: blueviolet
 }
