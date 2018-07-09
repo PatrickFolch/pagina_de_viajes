@@ -5,6 +5,7 @@ const LoginController = require('../controllers/loginController');
 const SessionController = require('../controllers/sessionController');
 const RegisterController = require('../controllers/registerController')
 const ActivateUserController = require('../controllers/activateUserController');
+const RecoverController=require('../controllers/recoverController')
 /* GET home page. */
 router.get('/', function(req, res, next) {
   let homeController = new HomeController(req, res, next);
@@ -39,6 +40,26 @@ router.post('/register',(req,res,next)=>{
 router.get('/activate/:hash',(req,res,next)=>{
   let activateUserController= new ActivateUserController(req,res,next)
   activateUserController.index();
-})
+});
 
-module.exports = router;
+/*router.get('/recover',(req,res,next)=>{
+let recoverController = new RecoverController(req,res,next)
+recoverController.index();
+})*/
+
+router.post('/recover',(req,res,next)=>{
+  let recoverController = new RecoverController(req,res,next)
+  recoverController.recover();
+  });
+
+router.get('/recover/password/:hash',(req,res,next)=>{
+  let recoverController=new RecoverController(req,res,next)
+  recoverController.formActivate();
+  });
+
+  router.post('/recover/password/:hash',(req,res,next)=>{
+    let recoverController=new RecoverController(req,res,next)
+    recoverController.activate();
+    });
+  
+    module.exports = router;

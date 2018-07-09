@@ -70,6 +70,28 @@ class UserModel {
             })
 
         }
+        setDesctivateUser(user){
+            return new Promise((resolve,reject)=>{
+                if(!conn) return reject("No existe conexion")
+                let SQL=`UPDATE clients set active=0, hash='${user.hash}', password='' where email='${user.email}';`;
+                conn.query(SQL,(error,rows)=>{
+                    if(error) return reject(error)
+                    else return resolve(rows)
+                })
+            })
+        }
+    
+        setActiveRecover(hash, password){
+            return new Promise((resolve,reject)=>{
+                if(!conn) return reject("No existe conexion");
+                let SQL = `UPDATE clients set active=1, password='${password}', hash='' where hash='${hash}';`;
+                conn.query(SQL,(error, rows)=>{
+                    if(error) return reject(error);
+                    else return resolve(rows);
+                })
+            })
+
+        }
     }
 
 
