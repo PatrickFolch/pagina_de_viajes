@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
 const HomeController = require('../controllers/homeController');
-const LoginController = require('../controllers/loginController');
-const SessionController = require('../controllers/sessionController');
-const RegisterController = require('../controllers/registerController')
-const ActivateUserController = require('../controllers/activateUserController');
-const RecoverController=require('../controllers/recoverController')
+const LoginController = require('../controllers/auth/loginController');
+const SessionController = require('../controllers/auth/sessionController');
+const RegisterController = require('../controllers/auth/registerController')
+const ActivateUserController = require('../controllers/auth/activateUserController');
+const RecoverController=require('../controllers/auth/recoverController')
 /* GET home page. */
 router.get('/', function(req, res, next) {
   let homeController = new HomeController(req, res, next);
@@ -42,10 +42,10 @@ router.get('/activate/:hash',(req,res,next)=>{
   activateUserController.index();
 });
 
-/*router.get('/recover',(req,res,next)=>{
+router.get('/recover',(req,res,next)=>{
 let recoverController = new RecoverController(req,res,next)
 recoverController.index();
-})*/
+})
 
 router.post('/recover',(req,res,next)=>{
   let recoverController = new RecoverController(req,res,next)

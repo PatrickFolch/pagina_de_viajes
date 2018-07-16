@@ -1,4 +1,4 @@
-const Controller = require('./controller');
+const Controller = require('../controller');
 
 class sessionController extends Controller{
     constructor(req,res,next){

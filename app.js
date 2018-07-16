@@ -39,6 +39,20 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('bower_components',express.static(`${__dirname}/public/components`));
 
+/*let env = process.env.NODE_ENV;
+switch (env)
+{
+  case 'development':
+    console.log("HAS ENTRADO EN MODO DESARROLLO.");
+    break;
+  case 'production':
+    console.log("HAS ENTRADO EN MODO PRODUCCION.");
+    break;
+default:
+  console.log("No has introducido un entorno de produccion");
+  process.exit(1);
+}*/
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 

@@ -1,0 +1,27 @@
+/*const config={
+    development:{
+        mysql:{
+            server:'localhost',
+            user:'root',
+            pass:'',
+            bd:'web_viajes'
+        },
+        gmail:{
+            user:'patrickfolch2@gmail.com',
+            pass:'mheeeeee'
+        }    
+    },
+    production:{
+        mysql:{
+            server:'182.3.4.5',
+            user:'root',
+            pass:'',
+            bd:'web_viajes'
+        },
+        gmail:{
+            user:'patrickfolch2@gmail.com',
+            pass:'mheeeeee'
+        }      
+    }       
+}
+module.exports=config;*/
