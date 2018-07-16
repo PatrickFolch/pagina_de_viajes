@@ -11,7 +11,7 @@ const flash = require('connect-flash');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
+var multer=require('./routes/multer')
 var app = express();
 
 //Register Partials.
@@ -55,7 +55,7 @@ default:
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-
+app.use('/multer', multer)
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
 res.render('error404'); 

@@ -3,7 +3,7 @@ body {
   
 }
 
-h1{
+h1 header{
   font-size: 50px;
   color:white;
   text-align: center;
@@ -287,4 +287,8 @@ text-align: left;
   font-size:30px;
   padding:50px;
   text-align: center;
+}
+
+.admin{
+text-align: center;
 }

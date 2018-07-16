@@ -6,6 +6,7 @@ const SessionController = require('../controllers/auth/sessionController');
 const RegisterController = require('../controllers/auth/registerController')
 const ActivateUserController = require('../controllers/auth/activateUserController');
 const RecoverController=require('../controllers/auth/recoverController')
+const AdminController= require('../controllers/adminController')
 /* GET home page. */
 router.get('/', function(req, res, next) {
   let homeController = new HomeController(req, res, next);
@@ -61,5 +62,10 @@ router.get('/recover/password/:hash',(req,res,next)=>{
     let recoverController=new RecoverController(req,res,next)
     recoverController.activate();
     });
+
+    router.get('/admin',(req,res,next)=>{
+    let adminController=new AdminController(req,res,next)
+    adminController.index()
+    })
   
     module.exports = router;

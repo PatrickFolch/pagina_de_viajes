@@ -187,20 +187,22 @@ form{
   color:white;
   position: absolute;
   background-color: blue;
-  top: 10px;
-  left: 10px;
+  top: 0px;
+  left: 0px;
   width: 80%;
   height: 35px;
+  text-align: center;
 }
 
 .money {
   position: absolute;
   background-color: yellow;
   color: blue;
-  top: 10px;
-  right: 10px;
-  height: 60px;
-
+  top: 0px;
+  right: 0px;
+  height: 35px;
+  width:20%; 
+  text-align: center;
 }
 a nav-link{
 color: white;
