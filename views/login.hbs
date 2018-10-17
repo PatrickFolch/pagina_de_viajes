@@ -11,10 +11,15 @@
             <div class="col-12">
                 <form method="post">
                     <div class="form-group">
-                        <input class=" form-control form-control-lg" type="text" placeholder="Usuario o Email" id="lg_usuario" name="lg_usuario">
-                        <input class=" form-control form-control-lg" type="password" placeholder="Contraseña" id="lg_password" name="lg_password">
+                        <input class=" form-control form-control-lg" type="text" placeholder="Usuario o Email" id="lg_usuario"
+                            name="lg_usuario">
+                        <input class=" form-control form-control-lg" type="password" placeholder="Contraseña" id="lg_password"
+                            name="lg_password">
                         <button class="btn btn-warning" type="submit">Enviar</button>
                     </div>
+                    {{#if error}}
+                    <div class="alert-danger alert-dismissible">{{error}}</div>
+                    {{/if}}
                 </form>
             </div>
         </div>
@@ -22,7 +27,8 @@
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                 Recuperar Contraseña
             </button>
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -46,9 +52,7 @@
 
                     </div>
                 </div>
-                {{#if error}}
-                <div class="alert-danger alert-dismissible">{{error}}</div>
-                {{/if}}
+                
             </div>
         </div>
     </div>
@@ -66,17 +70,23 @@
         <div class="row justify-content-center">
             <form method="post">
                 <div class="form-group">
-                    <input class=" form-control form-control" type="text" placeholder="Usuario o Email" id="lg_usuariop" name="lg_usuario">
-                    <input class=" form-control form-control" type="password" placeholder="Contraseña" id="lg_passwordp" name="lg_password">
+                    <input class=" form-control form-control" type="text" placeholder="Usuario o Email" id="lg_usuariop"
+                        name="lg_usuario">
+                    <input class=" form-control form-control" type="password" placeholder="Contraseña" id="lg_passwordp"
+                        name="lg_password">
                     <button class="btn btn-warning" type="submit">Enviar</button>
                 </div>
+                {{#if error}}
+                <div class="alert-danger alert-dismissible">{{error}}</div>
+                {{/if}}
             </form>
         </div>
         <div class="row justify-content-center">
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
                 Recuperar Contraseña
             </button>
-            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -100,13 +110,6 @@
                     </div>
                 </div>
             </div>
-
-
-
-
-            {{#if error}}
-            <div class="alert-danger alert-dismissible">{{error}}</div>
-            {{/if}}
         </div>
     </div>
 </div>

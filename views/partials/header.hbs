@@ -1,41 +1,59 @@
-<div class="container-fluid bkimage d-none  d-lg-block">
+<div class="container-fluid bkimage d-none d-md-block d-lg-block">
   <div class="row">
     <div class="col-3">
-        <img  class="logo" src="../images/iconoweb.png"><br>GeeksHubs
+      <img class="logo" src="../images/iconoweb.png"><br>GeeksHubs
     </div>
     <div class="col-6 justify-content-between">
-        <nav class="nav">
-            <a class="nav-link" href="/">Home</a>
-            <a class="nav-link" href="#">Destinos</a>
-            <a class="nav-link" href="#">Quienes Somos</a>
-            <a class="nav-link" href="#">Donde Estamos</a>
-            {{#unless usuario}}
-            <a class="nav-link" href="/login">Login</a>
-            <a class="nav-link" href="/register">Registro</a>
+      <nav class="nav">
+        {{!-- {{#unless admin}} --}}
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link" href="#">Destinos</a>
+        <a class="nav-link" href="#">Quienes Somos</a>
+        <a class="nav-link" href="#">Donde Estamos</a>
+        {{!-- {{/unless}} --}}
+        {{#unless usuario}}
+        {{#unless admin}}
+        <a class="nav-link" href="/login">Login</a>
+        <a class="nav-link" href="/register">Registro</a>
+        {{/unless}}
+        {{/unless}}
+        {{#if usuario}}
+        <div class="dropdown">
+          <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            {{usuario}}
+          </a>
+          <div class=" bg bg-primary dropdown-menu" aria-labelledby="dropdownMenuLink">
+            {{#unless admin}}
+            <a class="dropdown-item active" href="/closeSession">Cerrar sesion</a>
             {{/unless}}
-            {{#if usuario}}
-             <a class="nav-link" href="/closeSession">{{usuario}}</a>
+            {{#if admin}}
+            <a class="dropdown-item active" href="/admin">Administrador</a>
+            <a class="dropdown-item active" href="/closeSession">Salir del Administrador </a>
             {{/if}}
-        </nav>
+          </div>
+        </div>
+        {{/if}}
+      </nav>
     </div>
-    <div class="col-3">       
-          <a href="#"><img class="rs1" src="../images/tt-ico.png"></a>
-          <a href="#"><img class="rs1" src="../images/ws-ico.png"></a>
-          <a href="#"><img class="rs1" src="../images/fb-ico.png"></a>
-          <a href="#"><img class="rs1" src="../images/ig-ico.png"></a>
-          <a href="#"><img class="rs1" src="../images/in-ico.png"></a>
-          <a href="#"><img class="rs1" src="../images/yt-ico.png"></a>
-        </div>   
+    <div class="col-3">
+      <a href="#"><img class="rs1" src="../images/tt-ico.png"></a>
+      <a href="#"><img class="rs1" src="../images/ws-ico.png"></a>
+      <a href="#"><img class="rs1" src="../images/fb-ico.png"></a>
+      <a href="#"><img class="rs1" src="../images/ig-ico.png"></a>
+      <a href="#"><img class="rs1" src="../images/in-ico.png"></a>
+      <a href="#"><img class="rs1" src="../images/yt-ico.png"></a>
+    </div>
   </div>
-     <div class="row">
+  <div class="row">
     <div class="col-12">
-      <div class="titulo">
         <h1 class="header">Viaja!</h1>
+      <div class="titulo">
         <p>descubre sitios maravillosos</p>
       </div>
     </div>
   </div>
-<div class="row justify-content-center">
+  <div class="row justify-content-center">
     <div class="12">
       <div class="bot">
         <button class="btn btn-warning">ver destinos</button>
@@ -43,57 +61,69 @@
     </div>
   </div>
 </div>
-<div class="container-fluid bkimage d-lg-none xl-block">
+
+<div class="container-fluid bkimage d-md-none lg-block xl-block">
   <div class="row">
     <div class="col-12">
-        <nav class="navbar navbar-expand-lg navbar-light bg-primary">
-  <a class="navbar-brand"><img class="logo" src="../images/iconoweb.png"><br>GeeksHubs </a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item"> 
-        <a class="nav-link" href="/">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#destinos">Destinos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#quienessomos">Quienes Somos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#dondeestamos">Donde Estamos</a>
-      </li>
-       {{#unless usuario}}
-       <li class="nav-item">
-        <a class="nav-link" href="/login">Login</a>
-      </li>
-       <li class="nav-item">
-        <a class="nav-link" href="/register">Registro</a>
-      </li>
-        {{/unless}}
-        {{#if usuario}}
-        <li class="nav-item">
-          <a class="nav-link" href="/closeSession">{{usuario}}</a>
-        </li>
+      
+      <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <a class="navbar-brand"><img class="logo" src="../images/iconoweb.png"><br>GeeksHubs </a>{{#if usuario}}
+        <div class="dropdown">
+          <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            {{usuario}}
+          </a>
+          <div class=" bg bg-primary dropdown-menu" aria-labelledby="dropdownMenuLink">
+            {{#unless admin}}
+            <a class="dropdown-item active" href="/closeSession">Cerrar sesion</a>
+            {{/unless}}
+            {{#if admin}}
+            <a class="dropdown-item active" href="/admin">Administrador</a>
+            <a class="dropdown-item active" href="/closeSession">Salir del Administrador </a>
+            {{/if}}
+          </div>
+        </div>
         {{/if}}
-    </ul>
-  </div>
-</nav>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#destinos">Destinos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#quienessomos">Quienes Somos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#dondeestamos">Donde Estamos</a>
+            </li>
+            {{#unless usuario}}
+            {{#unless admin}}
+            <li class="nav-item">
+              <a class="nav-link" href="/login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/register">Registro</a>
+            </li>
+            {{/unless}}
+            {{/unless}}
+          </ul>
+        </div>
+      </nav>
+      </div>
     </div>
-  </div>
-  <div class="row">
+  <div class="row justify-content-center">
     <div class="col-12">
       <div class="titulo">
         <h1 class="header">Viaja!</h1>
         <p>descubre sitios maravillosos</p>
       </div>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="12">
       <div class="bot">
         <button class="btn btn-warning">ver destinos</button>
       </div>

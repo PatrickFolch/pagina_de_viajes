@@ -1,16 +1,25 @@
-const Controller=require('./controller')
-class adminController extends Controller
-{
-    constructor(req,res,next)
-    {
-        super(req,res,next)
+const Controller = require('./controller')
+const Viajes = require('../models/viajesModel')
+class adminController extends Controller {
+    constructor(req, res, next) {
+        super(req, res, next)
     }
-    index(){
-        this.res.render('admin',{
-                tilte:'Admin'
+    index() {
+        Viajes.findAll().then(viajes => {
+            if (this.req.session.admin) {
+                this.res.render('admin', {
+                    title: 'Admin',
+                    admin: this.req.session.admin,
+                    usuario: this.req.session.usuario,
+                    viajes: [...viajes]
                 });
-        }
+            } else {
+                this.res.redirect('/')
+
+
+            }
+        })
+    }
 }
 
-
-module.exports=adminController
+module.exports = adminController

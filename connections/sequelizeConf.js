@@ -2,7 +2,7 @@ const Sequelize= require('sequelize')
 
 class SequelizeConf{
     static getConnection(){
-        return new Sequelize('web_viajes','root','',{
+        return new Sequelize('web_viajes','root','EOS1200@',{
             host:'127.0.0.1',
             dialect:'mysql',
             pool:{
