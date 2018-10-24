@@ -7,6 +7,8 @@ const RegisterController = require('../controllers/auth/registerController')
 const ActivateUserController = require('../controllers/auth/activateUserController');
 const RecoverController=require('../controllers/auth/recoverController')
 const AdminController= require('../controllers/adminController')
+const DescripcionController=require('../controllers/descripcionController')
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   let homeController = new HomeController(req, res, next);
@@ -65,7 +67,20 @@ router.get('/recover/password/:hash',(req,res,next)=>{
 
     router.get('/admin',(req,res,next)=>{
     let adminController=new AdminController(req,res,next)
-    adminController.index()
+    adminController.index();
+    });
+
+    router.get('/descripcion',(req,res,next)=>{
+      let descripcionController=new DescripcionController(req,res,next)
+      descripcionController.index();
+    });
+    router.get('uploads',(req,res,next)=>{
+      let viajesController=new viajesController(req,res,next)
+      viajesController.index();
+    });
+    router.post('uploads',(req,res,next)=>{
+      let viajesController=new viajesController(req,res,next)
+      viajesController.createTravel(travelData);
     })
   
     module.exports = router;

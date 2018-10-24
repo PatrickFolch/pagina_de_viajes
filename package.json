@@ -4,9 +4,8 @@
   "private": true,
   "scripts": {
     "start": "concurrently \"npm run start-backend\" \"npm run start-frontend\"",
-    "start-backend":" nodemon ./bin/www",
+    "start-backend": " nodemon ./bin/www",
     "start-frontend": "gulp"
-    
   },
   "dependencies": {
     "app-root-path": "^2.0.1",

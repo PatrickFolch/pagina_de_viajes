@@ -19,9 +19,9 @@ const Viajes = connect.define('viajes',{
     descripcion:{
         type:Sequelize.STRING(250)
     },
-    type:{
-        type:Sequelize.BOOLEAN
-    },
+    // type:{
+    //     type:Sequelize.BOOLEAN
+    // },
     img_path:Sequelize.STRING(45)
 })
 

@@ -1,24 +1,28 @@
-<div class="row">
-<div class="col-md-6 col-md-offset-3">
-    <div class="panel panel-login">
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-lg-12">
-                    <form action="/multer/upload" enctype="multipart/form-data" method="post" role="form">
-                        <div class="form-group">
-                            <input type="file" name="file" class="form-control">
+<div class="container-fluid bkimage3">
+    <div class="transparente">
+        <div class="row justify-content-center">
+            <div class="col">
+                <h1>Crear viaje</h1>
+                <form action="/multer/upload" enctype="multipart/form-data" method="post" role="form">
+                    <div class="form-group">
+                        <input type="text" name="viaje" class="form-control" placeholder="Nombre de viaje">
+                        <input type="text" name="precio" class="form-control" placeholder="Precio del viaje">
+                        <textarea name="descripcion" class="form-control" id="" cols="40" rows="5"></textarea>
+                        <div class="custom-file">
+                            <input type="file" name="img_path" class="custom-file-input" id="customFileLang" lang="es">
+                            <label class="custom-file-label" for="customFileLang">Imagen del viaje</label>
                         </div>
-                        <div class="form-group">
-                            <div class="row">
-                                <div class="col-sm-6 col-sm-offset-3">
-                                    <input type="submit" name="submit1" class="form-control btn btn-success" value="Upload Now">
-                                </div>
-                            </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" name="active" class="custom-control-input" id="customCheck1">
+                            <label class="custom-control-label" for="customCheck1">Activar viaje</label>
                         </div>
-                    </form>
-                </div>
+                    </div>
+                    <input type="submit" class="btn btn-success" value="Enviar">
+                    {{#if error}}
+                    <div class="alert-danger alert-dismissible">{{error}}</div>
+                    {{/if}}
+                </form>
             </div>
         </div>
     </div>
-</div>
 </div>

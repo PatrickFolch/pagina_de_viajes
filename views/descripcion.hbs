@@ -1,0 +1,28 @@
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col">
+            <div class="viajes2">
+                {{#each viajes}}
+                <div class="ImgV2">
+                    <div class="card">
+                        <img class="card-img-top" src="../images/{{img_path}}" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title">{{viaje}}<br></h5>
+                            <p class="card-text">{{descripcion}}</p>
+                            <div class="money">
+                                <h3>{{precio}}€</h3>
+                            </div>
+                            <div class="ofer">
+                                <h4>Ahorra 90 Euros</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <a class="enlace" href="/">Volver</a>
+    </div>
+</div>

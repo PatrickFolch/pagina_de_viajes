@@ -58,7 +58,7 @@ app.use('/users', usersRouter);
 app.use('/multer', multer)
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-res.render('error404'); 
+res.render('Error404'); 
 //next(createError(404));
 });
 

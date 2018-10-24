@@ -343,12 +343,29 @@ margin: 20px;
   font-size:30px;
   margin:10px;
 }
-.la{
+.enlace{
   font-size: 20px;
   text-align: center;
   color: aqua;
 }
-.la:hover{
+.enlace:hover{
   color: blue;
   text-decoration: none;
+}
+
+.adminbg{
+  background-color: silver;
+}
+.EV{
+  border-radius: 50%;
+  background-color: crimson;
+  color: white;
+  font-size: 15px;
+}
+.tabla{
+  background-color:whitesmoke;
+}
+
+.in{
+  color:white;
 }
