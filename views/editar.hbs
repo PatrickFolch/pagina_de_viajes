@@ -1,0 +1,27 @@
+<div class="container-fluid bkimage3">
+    <div class="row justify-content-center">
+        <div class="transparente">
+            <div class="col">
+                <h1>Editar viaje</h1>
+                    {{#with viaje}}
+                <form action="/editar/{{id}}" enctype="form-data" method="post" role="form">
+                    <div class="form-group">
+                        <input type="text" name="viaje" value="{{viaje}}"  class="form-control" placeholder=" Cambiar nombre del viaje">
+                        <input type="number" value="{{precio}}" name="precio" class="form-control" placeholder="Cambiar precio del viaje">
+                        <textarea  name="descripcion" class="form-control" id="" placeholder="Cambiar descripcion del viaje"
+                            cols="40" rows="5">{{descripcion}}</textarea>
+                        {{!-- <div class="custom-file">
+                            <input type="file" name="img_path" class="custom-file-input" id="customFileLang" lang="es">
+                            <label class="custom-file-label" for="customFileLang">{{img_path}}</label>
+                        </div> --}}
+                    </div>
+                    <input type="submit" class="btn btn-success" value="Actualizar">
+                    {{#if error}}
+                    <div class="alert-danger alert-dismissible">{{error}}</div>
+                    {{/if}}
+                </form>
+                    {{/with}}
+            </div>
+        </div>
+    </div>
+</div>

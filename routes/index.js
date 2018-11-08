@@ -8,7 +8,9 @@ const ActivateUserController = require('../controllers/auth/activateUserControll
 const RecoverController=require('../controllers/auth/recoverController')
 const AdminController= require('../controllers/adminController')
 const DescripcionController=require('../controllers/descripcionController')
-
+const ViajesController=require('../controllers/viajesController')
+const EdViajesController=require('../controllers/edViajesController')
+// const BorrarViajesController=require('../controllers/borrarViajesController')
 /* GET home page. */
 router.get('/', function(req, res, next) {
   let homeController = new HomeController(req, res, next);
@@ -75,12 +77,26 @@ router.get('/recover/password/:hash',(req,res,next)=>{
       descripcionController.index();
     });
     router.get('uploads',(req,res,next)=>{
-      let viajesController=new viajesController(req,res,next)
+      let viajesController=new ViajesController(req,res,next)
       viajesController.index();
     });
     router.post('uploads',(req,res,next)=>{
-      let viajesController=new viajesController(req,res,next)
+      let viajesController=new ViajesController(req,res,next)
       viajesController.createTravel(travelData);
-    })
-  
+    });
+
+    router.get('/editar/:id',(req,res,next)=>{
+      console.log(req.params.id);
+      let edViajesController=new EdViajesController(req,res,next)
+      edViajesController.index();
+    });
+
+    router.post('/editar/:id',(req,res,next)=>{
+      console.log("ruta ->"+ JSON.stringify(req.body));
+      let edViajesController=new EdViajesController(req,res,next)
+      edViajesController.editarViaje();
+    });
+    
+    
+    
     module.exports = router;

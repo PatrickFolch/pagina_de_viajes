@@ -240,8 +240,9 @@ input{
   min-width: 500px;
   padding: 30px;
   max-width: 500px;
-  margin-left: 350px;
-  margin-right: 350px;
+  /* margin-left: 350px;
+  margin-right: 350px; */
+  align-items: center
 }
 .transparente a {
   font-size: 18px;
@@ -356,7 +357,7 @@ margin: 20px;
 .adminbg{
   background-color: silver;
 }
-.EV{
+.delTravel{
   border-radius: 50%;
   background-color: crimson;
   color: white;
@@ -367,5 +368,24 @@ margin: 20px;
 }
 
 .in{
-  color:white;
+  color:whitesmoke;
+}
+
+.edTravel{
+  font-size: 15px;
+  border-radius:10px;
+  padding: 3px; 
+}
+
+input{
+  margin: 10px;
+}
+textarea{
+  margin: 10px;
+}
+
+
+.adminImg{
+  height: 60px;
+  width:120px;
 }
