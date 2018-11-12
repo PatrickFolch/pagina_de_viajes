@@ -10,7 +10,7 @@ const AdminController= require('../controllers/adminController')
 const DescripcionController=require('../controllers/descripcionController')
 const ViajesController=require('../controllers/viajesController')
 const EdViajesController=require('../controllers/edViajesController')
-// const BorrarViajesController=require('../controllers/borrarViajesController')
+const BorrarViajesController=require('../controllers/borrarViajesController')
 /* GET home page. */
 router.get('/', function(req, res, next) {
   let homeController = new HomeController(req, res, next);
@@ -72,7 +72,7 @@ router.get('/recover/password/:hash',(req,res,next)=>{
     adminController.index();
     });
 
-    router.get('/descripcion',(req,res,next)=>{
+    router.get('/descripcion/:id',(req,res,next)=>{
       let descripcionController=new DescripcionController(req,res,next)
       descripcionController.index();
     });
@@ -97,6 +97,10 @@ router.get('/recover/password/:hash',(req,res,next)=>{
       edViajesController.editarViaje();
     });
     
-    
+    router.get('/deleteTravel/:id', (req, res, next) =>{
+      let borrarViajesController = new BorrarViajesController(req, res, next)
+      borrarViajesController.deleteTravel();
+      res.redirect('/admin');
+    })
     
     module.exports = router;

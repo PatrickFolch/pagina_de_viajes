@@ -12,12 +12,14 @@
           <tr>
             <th scope="col">id</th>
             <th scope="col">Travel</th>
-            <th scope="col">Fecha</th>
+            <th scope="col">Fecha de creacion</th>
+            <th scope="col">Fecha de modificacion</th>
             <th scope="col">Descripcion</th>
             <th scope="col">Imagen</th>
             <th scope="col">Precio</th>
             <th scope="col">Activar</th>
-            <th scope="col"></th>
+            <th scope="col">Editar</th>
+            <th scope="col">Borrar</th>
           </tr>
         </thead>
         <tbody class="tabla">
@@ -25,17 +27,27 @@
           <tr> 
             <th scope="row">{{id}}</th>
             <td>{{viaje}}</td>
-            <td>{{createdAt}}-{{updatedAt}}</td>
+            <td>{{createdAt}}</td>
+             <td>{{updatedAt}}</td>
             <td>{{descripcion}}</td>
-            <td>{{img_path}}</td>
+            <td><img class="adminImg" src='../images/{{img_path}}'></td>
             <td>{{precio}}€</td>
             <td>
               <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" {{#if active}}checked{{/if}} id="customCheck{{id}}">
-                <label class="custom-control-label in" for="customCheck{{id}}"> activar </label>
+                <label class="custom-control-label in" for="customCheck{{id}}">a</label>
               </div>
             </td>
-            <td><button type="button" class="EV">x</button></td>
+            <td>
+              <a href="editar/{{id}}">
+                <button type="button" class="btn btn-primary edTravel">Editar</button>
+              </a>  
+            </td>
+            <td>
+              <a href="/deleteTravel/{{id}}"> 
+              <button type="button" id="{{id}}" class="delTravel">x</button>
+              </a>
+              </td>
           </tr>
           {{/each}}
         </tbody>
