@@ -7,28 +7,15 @@ class descripcionController  extends Controller {
     }
 
     index() {
-          
-        Viajes.findAll({
-            where:{active:true}
-        }).then(viajes => {
-        
-            if (this.req.session.usuario) {
-                this.res.render('descripcion', { 
-                    title: 'Home',
-                    usuario: this.req.session.usuario,
-                    admin: this.req.session.admin,
-                    viajes: [...viajes]
-                });
-            } else {
-                this.res.render('descripcion', { 
-                    tilte: 'Home',
-                    viajes:[...viajes]
-                });
-            }
-            });
-        
-    }
-
-}
+        const viajesId = this.req.params.id;
+        Viajes.findOne({where:{id:viajesId}}).then(viaje=>{
+                        this.res.render('descripcion', {
+                            title: 'Descripcion viaje',
+                            usuario: this.req.session.usuario,
+                            viaje: viaje
+                        });
+                     })  
+                    }
+                }
 
 module.exports = descripcionController ;

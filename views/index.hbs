@@ -4,7 +4,9 @@
             {{#each viajes}}
             <div class="ImgV">
                 <div class="card">
+              <a href="/descripcion/{{id}}">
                     <img class="card-img-top" src="../images/{{img_path}}" alt="Card image cap">
+            </a>
                     <div class="card-body">
                         <h5 class="card-title">{{viaje}}<br></h5>
                         <div class="money">
@@ -17,7 +19,6 @@
                 </div>
             </div>
             {{/each}}
-          <a class="enlace" href="/descripcion">Ver mas</a>
         </div>
     </div>
     <div class="container-fluid">
