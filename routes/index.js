@@ -11,6 +11,21 @@ const DescripcionController=require('../controllers/descripcionController')
 const ViajesController=require('../controllers/viajesController')
 const EdViajesController=require('../controllers/edViajesController')
 const BorrarViajesController=require('../controllers/borrarViajesController')
+const Multer=require('multer');
+const UploadService=require('../service/uploadService')
+
+let uploadService=new UploadService;
+let upload = uploadService.up();
+const storage=Multer.diskStorage({
+    destination:(req,file,cb)=>{
+        cb(null, "public/images");
+    },
+    filename: (req, file, cb) =>{
+        cb(null, file.originalname);
+    }
+});
+const Upload=Multer({storage:storage});
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
   let homeController = new HomeController(req, res, next);
@@ -91,13 +106,13 @@ router.get('/recover/password/:hash',(req,res,next)=>{
       edViajesController.index();
     });
 
-    router.post('/editar/:id',(req,res,next)=>{
+    router.post('/editar/:id',upload.any('file'),(req,res,next)=>{
       console.log("ruta ->"+ JSON.stringify(req.body));
       let edViajesController=new EdViajesController(req,res,next)
       edViajesController.editarViaje();
     });
     
-    router.get('/deleteTravel/:id', (req, res, next) =>{
+    router.get('/deleteTravel/:id',(req, res, next) =>{
       let borrarViajesController = new BorrarViajesController(req, res, next)
       borrarViajesController.deleteTravel();
       res.redirect('/admin');
