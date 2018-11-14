@@ -17,7 +17,7 @@
             <th scope="col">Descripcion</th>
             <th scope="col">Imagen</th>
             <th scope="col">Precio</th>
-            <th scope="col">Activar</th>
+            <th scope="col">Activar</th> 
             <th scope="col">Editar</th>
             <th scope="col">Borrar</th>
           </tr>
@@ -33,10 +33,12 @@
             <td><img class="adminImg" src='../images/{{img_path}}'></td>
             <td>{{precio}}€</td>
             <td>
-              <div class="custom-control custom-checkbox">
+              {{#if active}}<a class="enlace2" href="/desactivarViaje/{{id}}">Desctivar</a>{{/if}}
+              {{#unless active}}<a class="enlace2" href="/activarViaje/{{id}}">Activar</a>{{/unless}} 
+              {{!-- <div class="custom-control custom-checkbox">
                 <input type="checkbox" class="custom-control-input" {{#if active}}checked{{/if}} id="customCheck{{id}}">
                 <label class="custom-control-label in" for="customCheck{{id}}">a</label>
-              </div>
+              </div> --}}
             </td>
             <td>
               <a href="editar/{{id}}">

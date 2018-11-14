@@ -11,6 +11,8 @@ const DescripcionController=require('../controllers/descripcionController')
 const ViajesController=require('../controllers/viajesController')
 const EdViajesController=require('../controllers/edViajesController')
 const BorrarViajesController=require('../controllers/borrarViajesController')
+const ActivarViajeController=require('../controllers/activarViajeController')
+const DesactivarViajeController=require('../controllers/desactivarViajeController')
 const Multer=require('multer');
 const UploadService=require('../service/uploadService')
 
@@ -115,6 +117,17 @@ router.get('/recover/password/:hash',(req,res,next)=>{
     router.get('/deleteTravel/:id',(req, res, next) =>{
       let borrarViajesController = new BorrarViajesController(req, res, next)
       borrarViajesController.deleteTravel();
+      res.redirect('/admin');
+    })
+
+    router.get('/activarViaje/:id',(req,res,next) =>{
+      let activarViajeController = new ActivarViajeController(req,res,next)
+      activarViajeController.activateTravel();
+      res.redirect('/admin');
+    })
+    router.get('/desactivarViaje/:id',(req,res,next) =>{
+      let desactivarViajeController = new DesactivarViajeController(req,res,next)
+      desactivarViajeController.desactivateTravel();
       res.redirect('/admin');
     })
     
