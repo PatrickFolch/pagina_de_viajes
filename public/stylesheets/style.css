@@ -315,15 +315,6 @@ text-align: center;
   flex-wrap: wrap;
   margin: 30px;
 }
-.viajes2{
-  display: flex;
-  flex: auto;
-  flex-direction: row;
-  justify-content: space-evenly; 
-  align-items:center; 
-  flex-wrap: wrap;
-  margin: 60px;
-}
 
 .ImgV{
 width: 350px;
@@ -332,9 +323,9 @@ margin: 20px;
 }
 
 .ImgV2{
-  width: 350px;
-  height:300px;
-  margin: 60px;
+  width: 500px;
+  height:1000px;
+  margin: 30px;
   }
 
 .buttonV{
@@ -345,9 +336,10 @@ margin: 20px;
   margin:10px;
 }
 .enlace{
-  font-size: 20px;
+  font-size: 25px;
   text-align: center;
   color: aqua;
+  margin: 20px;
 }
 .enlace:hover{
   color: blue;
@@ -388,4 +380,18 @@ textarea{
 .adminImg{
   height: 60px;
   width:120px;
+}
+
+.enlace2{
+  text-align: center;
+  color: aqua;
+  margin: 20px;
+}
+.enlace2:hover{
+  color: blue;
+  text-decoration: none;
+}
+.check{
+  height: 20px;
+  width: 20px;
 }
